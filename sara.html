@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="utf-8">
+<meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<title>健康</title>
+<title>次女</title>
 <link rel="shortcut icon" href="favicon.ico" />
+<link rel="stylesheet" href="style.css" />
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<!-- c3.js - c3 CSS, d3 JS, c3 JS -->
-<link href="c3.min.css" rel="stylesheet" />
-<script src="d3.v5.min.js"></script>
-<script src="c3.min.js"></script>
+<!-- Twitter JS -->
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </head>
 <body>
 <!-- Bootstrap Navigation Bar -->
@@ -25,139 +24,24 @@
 			<li class="nav-item"><a class="nav-link" href="work.html">仕事</a></li>
 			<li class="nav-item"><a class="nav-link" href="mail.html">メール</a></li>
 			<li class="nav-item"><a class="nav-link" href="dc.html">年金</a></li>
-			<li class="nav-item"><a class="nav-link active" href="health.html">健康</a></li>
+			<li class="nav-item"><a class="nav-link" href="health.html">健康</a></li>
 			<li class="nav-item"><a class="nav-link" href="movies.html">映画</a></li>
 			<li class="nav-item"><a class="nav-link" href="haruto.html">長男</a></li>
 			<li class="nav-item"><a class="nav-link" href="aoto.html">次男</a></li>
 			<li class="nav-item"><a class="nav-link" href="yura.html">長女</a></li>
-			<li class="nav-item"><a class="nav-link" href="sara.html">次女</a></li>
+			<li class="nav-item"><a class="nav-link active" href="sara.html">次女</a></li>
 		</ul>
 	</div>
 </nav>
 
-<div id="chart"></div>
-<script>
-var chart = c3.generate({
-	size: {
-		height: 700,
-		width: 1000
-	},
-	data: {
-		x: 'x',
-		columns: [
-			[
-				'x',
-				'2006-11-13',
-				'2007-10-16',
-				'2008-12-02',
-				'2009-09-02',
-				'2010-04-26',
-				'2010-11-02',
-				'2011-11-21',
-				'2012-12-27',
-				'2013-11-12',
-				'2014-12-26',
-				'2016-01-08',
-				'2017-01-24',
-				'2017-06-23',
-				'2018-05-28',
-				'2019-04-12'
-			],
-			[
-				'総合判定',
-				null,
-				null,
-				null,
-				null,
-				5,
-				2,
-				4,
-				2,
-				3,
-				2,
-				3,
-				1,
-				1,
-				1,
-				1
-			],
-			[
-				'視力(右)',
-				1.5,
-				1.5,
-				1.5,
-				1.2,
-				0.9,
-				0.4,
-				0.3,
-				0.4,
-				0.3,
-				0.2,
-				0.3,
-				0.1,
-				0.3,
-				0.1,
-				0.1
-			],
-			[
-				'視力(左)',
-				1.5,
-				1.5,
-				1.2,
-				1.5,
-				1.2,
-				1.5,
-				1.0,
-				1.2,
-				1.0,
-				0.4,
-				0.2,
-				0.6,
-				0.3,
-				0.4,
-				0.4
-			]
-		],
-		axes: {
-			'総合判定': 'y',
-			'視力(右)': 'y2',
-			'視力(左)': 'y2'
-		},
-		type: 'line',
-		order: null
-	},
-	axis: {
-		x: {
-			type: 'timeseries',
-			tick: {
-				format: '%Y-%m-%d'
-			}
-		},
-		y: {
-			tick: {
-				format: function(d) {
-					switch(d) {
-						case 1: return "E"; break;
-						case 2: return "D"; break;
-						case 3: return "C"; break;
-						case 4: return "B"; break;
-						case 5: return "A"; break;
-						default: return d;
-					}
-				},
-				values: [1,2,3,4,5]
-			}
-		},
-		y2: {
-			min: 0,
-			show: true,
-			tick: {
-				values: [0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0,1.2,1.5]
-			}
-		}
-	}
-});
-</script>
+<!-- as of 2020-05-10, keywords: "2017年3月","妹(0)","家族(0)","子ども","子供(0)","サラ","紗良(0),"次女","娘"" -->
+<!-- 2020 -->
+<!-- 2019 -->
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">家族とテレビ電話。<br><br>パパ「もしもしサラちゃん？」<br>サラ「…」<br>パパ「もしもーし」<br>サラ「…」<br>パパ「おーい」<br>サラ「…」<br>パパ「もしかしてYouTube観てる？」<br>サラ「うん」<br><br>血は受け継がれる…。 <a href="https://t.co/GYkBQANxgh">https://t.co/GYkBQANxgh</a></p>&mdash; Ryoei Hirano（平野良栄） (@retroeater) <a href="https://twitter.com/retroeater/status/1196073419051356162?ref_src=twsrc%5Etfw">November 17, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<!-- 2018 -->
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">いちご狩り、30分食べ放題。<br><br>パパ「何個食べた？」<br>ハル「13個」<br>アオ「48個」<br>ユラ「18個」<br>サラ「43個」<br>パパ「えっ」<br>サラ「43個」<br><br>サラは1歳2か月になりました。</p>&mdash; Ryoei Hirano（平野良栄） (@retroeater) <a href="https://twitter.com/retroeater/status/992626858008035328?ref_src=twsrc%5Etfw">May 5, 2018</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<!-- 2017 -->
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">【速報】四児の父になりました。</p>&mdash; Ryoei Hirano（平野良栄） (@retroeater) <a href="https://twitter.com/retroeater/status/837788557741740032?ref_src=twsrc%5Etfw">March 3, 2017</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 <!-- Bootstrap - jQuery, Popper.js, Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

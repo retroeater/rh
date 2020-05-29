@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<title>音声ブックマーク</title>
+</head>
+<body onLoad="recognition.start()">
+
+<form action="https://www.google.com/search">
+  <input type="search" id="q" name="q" size=60>
+</form>
+
+<script type="text/javascript">
+
+// Google Chrome のみ対応
+if ('webkitSpeechRecognition' in window) {}
+else {
+	alert("このブラウザは対応していません。")
+}
+
+var recognition = new webkitSpeechRecognition();
+
+// 音声認識継続
+recognition.continuous = true
+
+// ブラウザ設定言語取得
+recognition.lang = window.navigator.languages[0];
+
+// 音声認識
+recognition.onresult = function(event) {
+
+	var results = event.results;
+
+	// 音声認識結果が存在する場合
+	if (event.results.length > 0) {
+
+		// 音声認識結果の最後の文字列を取得
+		for (var i = event.resultIndex; i<results.length; i++){
+			if(results[i].isFinal) {
+				var word = results[i][0].transcript;
+			}
+		}
+
+		word = word.trim();
+
+		// 取得した文字列を表示
+		document.write(word);
+
+		switch(word) {
+			case "Amazon" || "アマゾン":
+				window.open('https://www.amazon.com/', '_blank')
+				break;
+			case "Google" || "グーグル":
+				window.open('https://www.google.com/', '_blank')
+				break;
+			case "ft" || "FT" || "Financial Times":
+				window.open('https://ft.com/', '_blank');
+				break;
+			default:
+				window.open('https://www.google.com/search?q=' + word, '_blank')
+				break;
+		}
+	}
+}
+</script>
+
+</body>
+</html>

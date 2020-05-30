@@ -2,17 +2,12 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<title>音声ブックマーク</title>
+<title>Speech-To-Go</title>
 </head>
 <body onLoad="recognition.start()">
-
-<form action="https://www.google.com/search">
-  <input type="search" id="q" name="q" size=60>
-</form>
-
+<p>※Google Chrome のみ対応。</p>
+<p>※ジャンプ先は Amazon と Google と FT のみ対応。</p>
 <script type="text/javascript">
-
 // Google Chrome のみ対応
 if ('webkitSpeechRecognition' in window) {}
 else {

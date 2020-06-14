@@ -1,54 +1,25 @@
-var chart = c3.generate({
-	size: {
-		height: 700,
-		width: 1000
-	},
-	data: {
-		x: 'x',
-		columns: [
-			[
-				'x',
-				'2019-11-01',
-				'2019-12-01',
-				'2020-01-01',
-				'2020-02-01',
-				'2020-03-01',
-				'2020-04-01',
-				'2020-05-01'
-			],
-			[
-				'VentageScore 4.0',
-				680,
-				679,
-				687,
-				697,
-				702,
-				700,
-				633
-			],
-			[
-				'FICO Score',
-				null,
-				null,
-				null,
-				null,
-				null,
-				null,
-				696
-			]
-		],
-		type: 'line',
-		order: null
-	},
-	axis: {
-		x: {
-			type: 'timeseries',
-			tick: {
-				format: '%Y/%m'
-			}
-		},
-		y: {
-			min: 600
+google.charts.load('current', {'packages':['corechart']})
+google.charts.setOnLoadCallback(drawChart)
+
+function drawChart() {
+	var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1KbZ-4ZEhoOFDF0N80oawY9uBqtSGwDX78Msy2g34QMI/edit#gid=0')
+	query.setQuery('SELECT A,B,C ORDER BY A')
+	query.send(handleQueryResponse)
+
+	function handleQueryResponse(response) {
+		if(response.isError()) {
+			alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage())
+			return
 		}
+		
+		var data = response.getDataTable()
+		
+        var options = {
+			legend: {position: 'bottom'}
+        }
+
+        var chart = new google.visualization.LineChart(document.getElementById('myChart'))
+
+        chart.draw(data, options)
 	}
-})
+}

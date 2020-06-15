@@ -1,53 +1,25 @@
-var chart = c3.generate({
-	size: {
-		height: 700,
-		width: 1000
-	},
-	data: {
-		x: 'x',
-		columns: [
-			[
-				'x',
-				'2010',
-				'2011',
-				'2012',
-				'2013',
-				'2014',
-				'2015',
-				'2016',
-				'2017',
-				'2018',
-				'2019',
-				'2020'
-			],
-			[
-				'送信',
-				8506,
-				10022,
-				10610,
-				9349,
-				10087,
-				9942,
-				10757,
-				9204,
-				6232,
-				4146
-			],
-			[
-				'受信',
-				23354 + 9308,
-				18136 + 25071,
-				19462 + 22564,
-				29137 + 21125,
-				23084 + 27723,
-				16228 + 13994,
-				21808 + 18765,
-				16314 + 17202,
-				13587 + 12184,
-				6426 + 13306
-			]
-		],
-		type: 'line',
-		order: null
+google.charts.load('current', {'packages':['corechart']})
+google.charts.setOnLoadCallback(drawChart)
+
+function drawChart() {
+	var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1Dw6yfRR_S35frCjiQ0o2jqVCn32a1eovHVZQLIEHVqA/edit#gid=0')
+	query.setQuery('SELECT A,B,C ORDER BY A')
+	query.send(handleQueryResponse)
+
+	function handleQueryResponse(response) {
+		if(response.isError()) {
+			alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage())
+			return
+		}
+		
+		var data = response.getDataTable()
+		
+        var options = {
+			legend: {position: 'bottom'},
+        }
+
+        var chart = new google.visualization.LineChart(document.getElementById('myChart'))
+
+        chart.draw(data, options)
 	}
-})
+}

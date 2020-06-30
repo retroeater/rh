@@ -1,8 +1,10 @@
+var spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1j_wbN73wC0KzVyGWCathxu34hj0SRxWxsejhNeOp-1Q/edit?usp=sharing'
+
 google.charts.load('current', {'packages':['corechart']})
 google.charts.setOnLoadCallback(drawChart)
 
 function drawChart() {
-	var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1j_wbN73wC0KzVyGWCathxu34hj0SRxWxsejhNeOp-1Q/edit?usp=sharing')
+	var query = new google.visualization.Query(spreadsheet_url)
 	query.setQuery('SELECT A,B,C,D ORDER BY A')
 	query.send(handleQueryResponse)
 

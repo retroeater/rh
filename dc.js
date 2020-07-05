@@ -1,8 +1,11 @@
+const spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1Ksj2eiGlwKCZwdE7K8vks6t5_5fuQM53gqFy8VZIa6Q/edit#gid=297257767'
+
 google.charts.load('current', {'packages':['corechart']})
 google.charts.setOnLoadCallback(drawChart)
 
 function drawChart() {
-	var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1Ksj2eiGlwKCZwdE7K8vks6t5_5fuQM53gqFy8VZIa6Q/edit#gid=297257767')
+
+	const query = new google.visualization.Query(spreadsheet_url)
 	query.setQuery('SELECT A,B,C,D,E,F,G,H,I ORDER BY A')
 	query.send(handleQueryResponse)
 
@@ -12,9 +15,9 @@ function drawChart() {
 			return
 		}
 		
-		var data = response.getDataTable()
+		const data = response.getDataTable()
 		
-        var options = {
+        const options = {
 			isStacked: true,
 			legend: {position: 'bottom'},
 			seriesType: 'bars',
@@ -23,7 +26,7 @@ function drawChart() {
 			interpolateNulls: true
         }
 
-        var chart = new google.visualization.ColumnChart(document.getElementById('myChart'))
+        const chart = new google.visualization.ColumnChart(document.getElementById('myChart'))
 
         chart.draw(data, options)
 	}

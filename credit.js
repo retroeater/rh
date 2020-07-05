@@ -1,10 +1,11 @@
-var spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1KbZ-4ZEhoOFDF0N80oawY9uBqtSGwDX78Msy2g34QMI/edit#gid=0'
+const spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1KbZ-4ZEhoOFDF0N80oawY9uBqtSGwDX78Msy2g34QMI/edit#gid=0'
 
 google.charts.load('current', {'packages':['corechart']})
 google.charts.setOnLoadCallback(drawChart)
 
 function drawChart() {
-	var query = new google.visualization.Query(spreadsheet_url)
+
+	const query = new google.visualization.Query(spreadsheet_url)
 	query.setQuery('SELECT A,B,C ORDER BY A')
 	query.send(handleQueryResponse)
 
@@ -14,13 +15,13 @@ function drawChart() {
 			return
 		}
 		
-		var data = response.getDataTable()
+		const data = response.getDataTable()
 		
-        var options = {
+        const options = {
 			legend: {position: 'bottom'}
         }
 
-        var chart = new google.visualization.LineChart(document.getElementById('myChart'))
+        const chart = new google.visualization.LineChart(document.getElementById('myChart'))
 
         chart.draw(data, options)
 	}
